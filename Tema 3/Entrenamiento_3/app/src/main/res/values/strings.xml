@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">APP Log In </string>
+    <string name="login_title">LOG IN</string>
+    <string name="label_user">Nombre de usuario</string>
+    <string name="label_password">Contraseña</string>
+    <string name="hint_user">Introduzca el email</string>
+    <string name="hint_password">password$12345</string>
+    <string name="succesLogin">Se ha logueado correctamente</string>
+</resources>

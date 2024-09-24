@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Entrenamiento5</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="altura">Altura</string>
+    <string name="result">Tu IMC</string>
+    <string name="error">ERROR</string>
+</resources>

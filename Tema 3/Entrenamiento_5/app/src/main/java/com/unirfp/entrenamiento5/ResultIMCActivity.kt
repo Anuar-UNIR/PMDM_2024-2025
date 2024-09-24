@@ -13,6 +13,7 @@ import com.unirfp.entrenamiento5.MainActivity.Companion.IMC_KEY
 
 class ResultIMCActivity : AppCompatActivity() {
 
+    //Creamos las variables privadas con iniciacion tardia para recoger los elementos visuales
     private lateinit var tvResult: TextView
     private lateinit var tvIMC: TextView
     private lateinit var tvDescription: TextView
@@ -28,17 +29,25 @@ class ResultIMCActivity : AppCompatActivity() {
             insets
         }
 
-        val resultIMC = intent.extras?.getDouble(IMC_KEY)?: -1.0
+        //Obtenemos el extra del intent del valor IMC, leemos la key con el compagnion object
+        val resultIMC = intent.extras?.getDouble(IMC_KEY)?: -1.0 //si no obtenemos el extra le damos valor -1
+
+        //Definimos 3 metodos (tomemoslo como un buen patron)
+        //Para iniciar los componentes visuales
         initComponents()
-        initUI(resultIMC)
+        //Para creamos los listenners de los eventos
         initListenners()
+        //Configuraciones visuales de los componentes
+        initUI(resultIMC)
+
     }
 
     private fun initListenners() {
         this.btnReCalculateIMC.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
     }
 
-    @SuppressLint("ResourceAsColor")
+
+    //Configuramos los textos y colores
     private fun initUI(resultIMC: Double) {
         this.tvIMC.text = resultIMC.toString()
         when(resultIMC){
@@ -72,6 +81,7 @@ class ResultIMCActivity : AppCompatActivity() {
         }
     }
 
+    //Inicializamos los componentes
     private fun initComponents() {
         this.tvIMC = findViewById(R.id.tvIMC)
         this.tvResult = findViewById(R.id.tvResult)

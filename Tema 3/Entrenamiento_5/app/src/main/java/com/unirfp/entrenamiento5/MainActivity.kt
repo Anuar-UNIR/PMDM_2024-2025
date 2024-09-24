@@ -18,10 +18,13 @@ import com.google.android.material.slider.RangeSlider
 
 class MainActivity : AppCompatActivity() {
 
+    //Creacion de un companion object que es accesible desde todas las activities
     companion object{
+        //Creo IMC_KEY para asignar el valor del extra en el intent
         const val IMC_KEY = "IMC_RESULT"
     }
 
+    //Creamos las variables privadas con iniciacion tardia para recoger los elementos visuales
     private lateinit var  viewMale: CardView
     private lateinit var  viewFemale: CardView
     private lateinit var  tvHeight: TextView
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var  btnImcCalculator: Button
 
 
+    //Creamos los atributos necesarios para la logica de la Activity
     private var isMaleSelected :Boolean = true
     private var isFemaleSelected :Boolean = false
     private var currentWeight = 45
@@ -52,13 +56,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        //Definimos 3 metodos (tomemoslo como un buen patron)
+        //Para iniciar los componentes visuales
         initComponents()
+
+        //Para creamos los listenners de los eventos
         initListeners()
+
+        //Configuraciones visuales de los componentes
         initUI()
     }
 
 
-
+    //Buscamos los elementos visuales por su id y se los asignamos a las variables creadas al principio
     private fun initComponents() {
         this.viewMale = findViewById(R.id.viewMale)
         this.viewFemale = findViewById(R.id.viewFemale)
@@ -73,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         this.btnImcCalculator = findViewById(R.id.btnCalc)
     }
 
+    //Generamos los listenners de los eventos que necesitamos
     private fun initListeners() {
         this.viewMale.setOnClickListener{
             if(!this.isMaleSelected) {
@@ -87,10 +98,14 @@ class MainActivity : AppCompatActivity() {
             setGenderColor()
         }
 
+        //Evento de cambio en la propiedad del slider
         this.rsHeight.addOnChangeListener {_, value, _ ->
+            //Pasamos a metros
             this.currentHeight = (value / 100.0).toDouble()
+            //Definimos el formato
             val df = DecimalFormat("#.##")
             val result = df.format(value)
+            //Mostramos el resultado
             tvHeight.text = result + " cm"
         }
 
@@ -125,13 +140,25 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Funcion para configurar los elementos visuales: cardview genero y textos peso y edad
+    private fun initUI() {
+        this.setGenderColor()
+        this.setWeight()
+        this.setAge()
+    }
+
+    //Funcion para navegar a la siguiente activity
     private fun navigateToResult(resultIMC: Double) {
+        //Creamos el objeto intent
         val intent = Intent(this, ResultIMCActivity::class.java)
+        //Añadimos el extra necesario para pasar el resultado del IMC
         intent.putExtra(IMC_KEY, resultIMC)
+        //Navegamos a la siguiente activity
         this.startActivity(intent)
 
     }
 
+    //Funcion para calcular el IMC
     private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
         val imc = this.currentWeight / (this.currentHeight * this.currentHeight)
@@ -140,20 +167,24 @@ class MainActivity : AppCompatActivity() {
         return result
     }
 
+    //Funcion para modificar el texto del peso
     private fun setWeight() {
         this.tvWeight.text = this.currentWeight.toString()
     }
 
+    //Funcion para modificar el texto de la edad
     private fun setAge() {
         this.tvAge.text = this.currentAge.toString()
 
     }
 
+    //Funcion para modificar genero seleccionado
     private fun changeGender(){
         this.isMaleSelected = !this.isMaleSelected
         this.isFemaleSelected = !this.isFemaleSelected
     }
 
+    //Funcion para modificar el bacground al cambiar el genero seleccionado
     private fun setGenderColor(){
         viewMale.setCardBackgroundColor(this.getBackgroundColor(isMaleSelected))
         viewFemale.setCardBackgroundColor(this.getBackgroundColor(isFemaleSelected))
@@ -171,15 +202,5 @@ class MainActivity : AppCompatActivity() {
         return ContextCompat.getColor(this, colorReference)
     }
 
-    private fun initUI() {
-        this.setGenderColor()
-        this.setWeight()
-        this.setAge()
-
-    }
-
-
-
-    //Continuar 5h 49minutos
 
 }

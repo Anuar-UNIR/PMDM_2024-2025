@@ -32,8 +32,8 @@ fun main() {
             opcion = readLine()?.toIntOrNull() ?: 0
 
             when (opcion) {
-                1 -> cuentaBancaria.obtenerDatosCuenta()
-                2 -> cuentaBancaria.obtenerSaldo()
+                1 -> println(cuentaBancaria.obtenerDatosCuenta())
+                2 -> println(cuentaBancaria.obtenerSaldo())
                 3 -> {
                     println("Introduce la cantidad a ingresar:")
                     val cantidad = readLine()?.toDoubleOrNull() ?: 0.0

@@ -5,7 +5,7 @@ class Gato (nombre:String, edad: Int, estado: String, fechaNacimiento: Date, val
 
 
     override fun muestra() {
-        val mensaje: String = "Esta mascota es un perro - Nombre: $nombre - Edad: $edad - Fecha: $fechaNacimiento " +
+        val mensaje: String = "Esta mascota es un gato - Nombre: $nombre - Edad: $edad - Fecha: $fechaNacimiento " +
                 "peloLargo: $peloLargo, Color: $color"
         println(mensaje)
     }

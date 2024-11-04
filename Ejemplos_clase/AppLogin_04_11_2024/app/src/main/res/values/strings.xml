@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppLogin_04_11_2024</string>
+    <string name="log_in">LOG IN</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="hint_user">Introduzca un email</string>
+    <string name="password">Contraseña</string>
+</resources>

@@ -27,13 +27,16 @@ class MainActivity : AppCompatActivity() {
 
                 //Comprobamos que  los textview esten rellenos, podiamos comprobar el formato de un email
                 if(usuario.text.isNotEmpty() && password.text.isNotEmpty())
-                {
+
                     //Creamos un objeto de Intent, el cual nos permite gestionar el cambio de ventana
                     val intent = Intent(this, ResultLoginActivity::class.java)
 
                     //Añadimos los valores o parametros que queremos pasar a la otra ventana
                     intent.putExtra("user", usuario.text.toString())
                     intent.putExtra("password", password.text.toString())
+
+                    Log.i("LOGIN", usuario.text.toString())
+                    Log.i("LOGIN", password.text.toString())
 
                     //Iniciamos la otra ventana
                     startActivity(intent)

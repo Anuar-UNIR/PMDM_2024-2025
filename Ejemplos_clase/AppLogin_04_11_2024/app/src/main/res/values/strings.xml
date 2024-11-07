@@ -4,4 +4,5 @@
     <string name="nombre_de_usuario">Nombre de usuario</string>
     <string name="hint_user">Introduzca un email</string>
     <string name="password">Contraseña</string>
+    <string name="result_login_text">Se ha logueado correctamente</string>
 </resources>

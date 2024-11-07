@@ -1,5 +1,7 @@
 package com.unirfp.applogin_04_11_2024
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
@@ -25,10 +27,28 @@ class MainActivity : AppCompatActivity() {
                 val password = findViewById<EditText>((R.id.passwordET))
 
                 if(usuario.text.isNotEmpty() && password.text.isNotEmpty()){
-                    Log.i("LOGIN",usuario.text.toString())
-                    Log.i("LOGIN", password.text.toString())
+                    //Log.i("LOGIN",usuario.text.toString())
+                    //Log.i("LOGIN", password.text.toString())
+
+                    //Navegar a la siguiente view
+                    val intent = Intent(this, ResultLoginActivity::class.java)
+
+                    //Añadimos los valores o paramentros que queremos pasar a la otra activity
+                    intent.putExtra("user", usuario.text.toString())
+                    intent.putExtra("password", password.text.toString())
+
+
+                    //Iniciamos la otra activity
+                    startActivity(intent)
+                }
+                else{
+                    usuario.setHintTextColor(Color.RED)
+                    usuario.setHint("Debe de rellenar esta campo")
                 }
 
-        }
+            }
     }
+
+
+
 }

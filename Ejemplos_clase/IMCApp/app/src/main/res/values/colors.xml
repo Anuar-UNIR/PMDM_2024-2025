@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background_component">#1D1E33</color>
+    <color name="background_component_selected">#FF111328</color>
+    <color name="background_app">#0E0B20</color>
+    <color name="background_button">#EB1555</color>
+    <color name="tittle_tex">#FF8D8E98</color>
+
+    <color name="peso_bajo">#F6C909</color>
+    <color name="peso_normal">#24D024</color>
+    <color name="sobre_peso">#EC9306</color>
+    <color name="obesidad">#9A0404</color>
+    <color name="error">#FF0000</color>
+</resources>

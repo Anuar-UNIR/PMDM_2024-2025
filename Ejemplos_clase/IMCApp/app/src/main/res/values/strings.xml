@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IMC App</string>
+    <string name="male_text">Hombre</string>
+    <string name="female_text">Mujer</string>
+    <string name="height_text">Altura</string>
+    <string name="weight_text">Peso</string>
+    <string name="age_text">Edad</string>
+    <string name="btn_imc">Calcular IMC</string>
+</resources>

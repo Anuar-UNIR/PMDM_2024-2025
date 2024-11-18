@@ -19,6 +19,7 @@ import com.google.android.material.slider.RangeSlider
 class MainActivity : AppCompatActivity() {
 
     //Creacion de un companion object que es accesible desde todas las activities
+    //Se parece a un atributo statico de java
     companion object{
         //Creo IMC_KEY para asignar el valor del extra en el intent
         const val IMC_KEY = "IMC_RESULT"

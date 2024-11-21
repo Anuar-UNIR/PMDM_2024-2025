@@ -6,4 +6,6 @@
     <string name="weight_text">Peso</string>
     <string name="age_text">Edad</string>
     <string name="btn_imc">Calcular IMC</string>
+    <string name="result_title">IMC</string>
+    <string name="error">ERROR</string>
 </resources>

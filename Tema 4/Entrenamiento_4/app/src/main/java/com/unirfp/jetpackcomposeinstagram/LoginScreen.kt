@@ -152,7 +152,7 @@ fun ForgotPassword(modifier: Modifier) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Email(email: String, onTextChanged: (String) -> Unit) {
-    TextField(value = email, onValueChange = {onTextChanged(it)},
+    TextField(value = email, onValueChange = { onTextChanged(it)},
         modifier = Modifier.fillMaxWidth(),
         placeholder = {Text(text = "Email")},
         maxLines = 1,

@@ -27,8 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PrimeraAppComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    MyComplexLayout(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -37,46 +36,97 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 
 @Composable
 fun MyComplexLayout(modifier: Modifier = Modifier){
     Column (Modifier.fillMaxSize()) {
-        Box(Modifier.fillMaxSize()
-            .weight(1f)
-            .background(Color.Cyan),
-            contentAlignment = Alignment.Center){
-            Text("Primer ejemplo de compose")
+
+        Column(Modifier.fillMaxSize().weight(1f)) {
+            Box(Modifier.fillMaxSize()
+                .weight(1f)
+                .background(Color.Cyan),
+                contentAlignment = Alignment.Center){
+                Text("Soy una caja en una columna")
+            }
+
+            Box(Modifier.fillMaxSize()
+                .weight(1f)
+                .background(Color.Green),
+                contentAlignment = Alignment.Center){
+                Text("Soy una caja en una columna")
+            }
+
+            Row(Modifier.fillMaxSize().weight(1f)){
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.Magenta),
+                    contentAlignment = Alignment.Center){
+                    Text("Soy una caja en una columna dentro de una fila")
+                }
+
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.LightGray),
+                    contentAlignment = Alignment.Center){
+                    Text("Soy una caja en una columna dentro de una fila")
+                }
+
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.Yellow),
+                    contentAlignment = Alignment.Center){
+                    Text("Soy una caja en una columna dentro de una fila")
+                }
+            }
+
+            Box(Modifier.fillMaxSize()
+                .weight(1f)
+                .background(Color.Transparent),
+                contentAlignment = Alignment.Center){
+                Text("Soy una caja en una columna")
+            }
+
         }
+
         
         Row(Modifier.fillMaxSize().weight(1f)){
             Box(Modifier.fillMaxSize()
                 .weight(1f)
                 .background(Color.Red),
                 contentAlignment = Alignment.TopCenter){
-                Text("Primer ejemplo de compose")
+                Text("Soy una caja en una fila")
             }
 
             Box(Modifier.fillMaxSize()
                 .weight(1f)
                 .background(Color.Gray),
                 contentAlignment = Alignment.BottomEnd){
-                Text("Primer ejemplo de compose")
+                Text("Soy una caja en una fila")
             }
 
-            Box(Modifier.fillMaxSize()
-                .weight(1f)
-                .background(Color.Blue),
-                contentAlignment = Alignment.TopEnd){
-                Text("Primer ejemplo de compose")
+            Column(Modifier.fillMaxSize().weight(1f)) {
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.Blue),
+                    contentAlignment = Alignment.TopEnd){
+                    Text("Soy una caja en una fila")
+                }
+
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.Green),
+                    contentAlignment = Alignment.TopEnd){
+                    Text("Soy una caja en una fila")
+                }
+
+                Box(Modifier.fillMaxSize()
+                    .weight(1f)
+                    .background(Color.Transparent),
+                    contentAlignment = Alignment.TopEnd){
+                    Text("Soy una caja en una fila")
+                }
             }
+
 
         }
 

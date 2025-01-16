@@ -1,6 +1,8 @@
 package com.unirfp.ejemploretrofitclase
 
+import com.google.gson.annotations.SerializedName
+
 data class DogsResponse(
-    var status: String,
-    var message: List<String>
+    @SerializedName("status") var status: String,
+    @SerializedName("message") var imagenes: List<String>
 )

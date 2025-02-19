@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cbf658ed14edc5a4987f28f0eb9160ae
+timeCreated: 1485011053
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87916
+  packageName: Sci-Fi Gun Light
+  packageVersion: 1.1
+  assetPath: Assets/Sci Fi Gun Light/Materials/SciFiGunLight/SciFiGunLight_Yellow.mat
+  uploadId: 731009

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f59d38d7fdabd3048a6eec44cfa5365f
+timeCreated: 1485011051
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87916
+  packageName: Sci-Fi Gun Light
+  packageVersion: 1.1
+  assetPath: Assets/Sci Fi Gun Light/Materials/SciFiGunLight/SciFiGunLight_White.mat
+  uploadId: 731009

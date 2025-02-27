@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 class SerieViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = ItemserieBinding.bind(view)
-
+View
     fun bind(serie: Serie){
         Picasso.get().load(serie.image).into(binding.ivSerie)
         binding.tvTitle.setText("Titulo: "+serie.title)
